@@ -18,19 +18,32 @@ programa
 			percentualCandidato3, 
 			numeroVotante = 0.0
 		cadeia 
-			candidato1nome = "Lua", 
-			candidato2nome = "Analu", 
-			candidato3nome = "Luana", 
+			candidato1nome, 
+			candidato2nome, 
+			candidato3nome, 
 			confirma, 
 			naoConfirma
 		logico 
 			empate = falso
+
+		escreva("Nome do Candidato 1: ")
+		leia(candidato1nome)
+
+		escreva("Nome do Candidato 2: ")
+		leia(candidato2nome)
+
+		
+		escreva("Nome do Candidato 3: ")
+		leia(candidato3nome)
 	
 
 		escreva("Opções de voto: \n")
 		escreva("1| ", candidato1nome, "\n")
 		escreva("2| ", candidato2nome, "\n")
 		escreva("3| ", candidato3nome, "\n")
+		escreva("6| Voto Nulo")
+		escreva("9| Voto em branco")
+		escreva("0| Encerrar votação")
 		
 
 		faca {
@@ -129,7 +142,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 909; 
+ * @POSICAO-CURSOR = 799; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
