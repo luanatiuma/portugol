@@ -105,20 +105,20 @@ programa
 					candidato3 = candidato3 + branco
 				}
 			
-			limpa()
-
-			percentualCandidato1 = (candidato1 / numeroVotante) * 100
-			percentualCandidato1 = Mat.arredondar(percentualCandidato1, 3)
-			
-			percentualCandidato2 = (candidato2 / numeroVotante) * 100
-			percentualCandidato2 = Mat.arredondar(percentualCandidato2, 3)
-			
-			percentualCandidato3 = (candidato3 / numeroVotante) * 100
-			percentualCandidato3 = Mat.arredondar(percentualCandidato3, 3)
-			
-			escreva("Valor do percentual de votos para ", candidato1nome, " é: ", percentualCandidato1, "%. \n")
-			escreva("Valor do percentual de votos para ", candidato2nome, " é: ", percentualCandidato2, "%. \n")
-			escreva("Valor do percentual de votos para ", candidato3nome, " é: ", percentualCandidato3, "%. \n")
+				limpa()
+	
+				percentualCandidato1 = (candidato1 / numeroVotante) * 100
+				percentualCandidato1 = Mat.arredondar(percentualCandidato1, 3)
+				
+				percentualCandidato2 = (candidato2 / numeroVotante) * 100
+				percentualCandidato2 = Mat.arredondar(percentualCandidato2, 3)
+				
+				percentualCandidato3 = (candidato3 / numeroVotante) * 100
+				percentualCandidato3 = Mat.arredondar(percentualCandidato3, 3)
+				
+				escreva("Valor do percentual de votos para ", candidato1nome, " é: ", percentualCandidato1, "%. \n")
+				escreva("Valor do percentual de votos para ", candidato2nome, " é: ", percentualCandidato2, "%. \n")
+				escreva("Valor do percentual de votos para ", candidato3nome, " é: ", percentualCandidato3, "%. \n")
 	
 			
 				se(candidato1>candidato2 e candidato1>candidato3){
@@ -142,7 +142,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 799; 
+ * @POSICAO-CURSOR = 2364; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
