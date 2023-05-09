@@ -16,17 +16,21 @@ programa
 			percentualCandidato1, 
 			percentualCandidato2, 
 			percentualCandidato3, 
-			numeroVotante = 0.0,
-			encerraVotacao = 123.0
+			numeroVotante = 0.0	
+
+		caracter
+			confirmaEncerramento = 'n'
+			 
 		cadeia 
 			candidato1nome, 
 			candidato2nome, 
 			candidato3nome, 
 			confirma, 
 			naoConfirma
-			
+
 		logico 
-			empate = falso
+			empate = falso,
+			encerraVotacao = falso
 
 		escreva("Nome do Candidato 1: ")
 		leia(candidato1nome)
@@ -45,7 +49,7 @@ programa
 		escreva("3| ", candidato3nome, "\n")
 		escreva("6| Voto Nulo \n")
 		escreva("9| Voto em branco \n")
-		escreva("0| Encerrar votação \n")
+		escreva("PIN| Encerrar votação \n")
 		
 
 		faca {
@@ -86,12 +90,16 @@ programa
 				escreva("O voto foi nulo \n")
 				pare
 
-			caso 0:
-				escreva("Você deseja encerrar a votação? \n \n Digite 'S' para Sim \n Digite 'N' para Não \n")
-				se(confirma == "S" ou confirma == "s"){
-					escreva("Digite o código de encerramento: ")
-					leia(encerraVotacao)
-					pare}
+			caso 123456:
+				limpa()
+				escreva("Deseja REALMENTE encerrar a votação? \n")
+				escreva("Digite 'S' para sim: ")
+				leia(confirmaEncerramento)
+				
+				se(confirmaEncerramento == 's' ou confirmaEncerramento == 'S'){
+					encerraVotacao = verdadeiro
+				}
+				pare
 			
 			caso contrario:
 				branco++
@@ -148,7 +156,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2114; 
+ * @POSICAO-CURSOR = 2196; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
