@@ -4,39 +4,46 @@ programa
 	 
 	funcao inicio()
 	{
-		inteiro numeroCandidato, nulo, branco, confirmaNumeroCandidato
-		real candidato1, candidato2, candidato3, percentualCandidato1, percentualCandidato2, percentualCandidato3, numeroVotante
-		cadeia candidato1nome, candidato2nome, candidato3nome, confirma, naoConfirma
+		inteiro 
+			numeroCandidato = 0, 
+			nulo = 0, 
+			branco = 0, 
+			confirmaNumeroCandidato
+		real 
+			candidato1 = 0.0, 
+			candidato2 = 0.0, 
+			candidato3 = 0.0, 
+			percentualCandidato1, 
+			percentualCandidato2, 
+			percentualCandidato3, 
+			numeroVotante = 0.0
+		cadeia 
+			candidato1nome = "Lua", 
+			candidato2nome = "Analu", 
+			candidato3nome = "Luana", 
+			confirma, 
+			naoConfirma
+		logico 
+			empate = falso
+	
+
+		escreva("Opções de voto: \n")
+		escreva("1| ", candidato1nome, "\n")
+		escreva("2| ", candidato2nome, "\n")
+		escreva("3| ", candidato3nome, "\n")
 		
-		numeroVotante = 0.0
-		candidato1 = 0.0
-		candidato2 = 0.0
-		candidato3 = 0.0
-		nulo = 0
-		branco = 0
 
-		escreva("Nome do Candidato 1: ")
-		leia(candidato1nome)
-
-		escreva("Nome do Candidato 2: ")
-		leia(candidato2nome)
-
-		escreva("Nome do Candidato 3: ")
-		leia(candidato3nome)
-		
-
-		faca{
-			escreva("Digite o número do candidato: ")
-			leia(confirmaNumeroCandidato)
-
-			escreva("Você confirma o seu voto? S/N")
-			leia(confirma)
-
-			se(confirma == "S") {
-				numeroCandidato == confirmaNumeroCandidato
-			}
-			senao {
-		
+		faca {
+			faca {
+				escreva("\n \n Digite o número do candidato: ")
+				leia(confirmaNumeroCandidato)
+	
+				escreva("\n Você confirma o seu voto? \n \n Digite 'S' para Sim \n Digite 'N' para Não \n")
+				leia(confirma)
+			
+			} enquanto (confirma == "N")
+				se(confirma == "S"){
+					numeroCandidato = confirmaNumeroCandidato
 			}
 
 			escolha (numeroCandidato) {
@@ -73,8 +80,7 @@ programa
 				escreva("O voto foi em branco \n")
 	
 			} 
-		}enquanto(numeroCandidato != 0)
-		
+		} enquanto(numeroCandidato != 0)
 			
 				se(candidato1>candidato2 e candidato1>candidato3){
 					candidato1 = candidato1 + branco
@@ -108,8 +114,11 @@ programa
 				senao se(candidato2>candidato1 e candidato2>candidato3){
 					escreva(candidato2nome, " ganhou a votação!")
 				}
-				senao{
+				se(candidato3>candidato1 e candidato3>candidato2){
 					escreva(candidato3nome, " ganhou a votação!")
+				}
+				senao{
+					escreva("Não foi possível determinar um ganhador nesta urna")
 				}
 		
 		}//função
@@ -120,7 +129,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 872; 
+ * @POSICAO-CURSOR = 909; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
