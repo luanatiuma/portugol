@@ -54,13 +54,13 @@ programa
 	
 
 		faca {
-	
-				escreva("\n\n Digite o número do candidato: ")
-				leia(confirmaNumeroCandidato)
+			escreva("\n\n Digite o número do candidato: ")
+			leia(confirmaNumeroCandidato)
+			confirmacao()
+			limpa()
 
 			escolha (numeroCandidato) {
 			caso 1: 
-				confirmacao()
 				candidato1++ //candidato1 = candidato1 + 1//
 				numeroVotante++
 				escreva(candidato1nome, " recebeu um voto \n")
@@ -154,7 +154,8 @@ programa
 		}//função inicio ()
 
 		funcao confirmacao() {
-			cadeia confirma
+			cadeia 
+				confirma
 			inteiro 
 				numeroCandidato = 0, 
 				confirmaNumeroCandidato = 0
@@ -164,7 +165,8 @@ programa
 				se(confirma == "S" ou confirma == "s"){
 				numeroCandidato = confirmaNumeroCandidato
 				somUrna(2)
-				}
+				} 
+					
 		} //funcao confirmacao()
 
 		funcao somUrna(inteiro tempoDeEspera) { //funcao VAZIO somUrna pois não está retornando nada, é preciso declarar a var do parâmetro dontro dos () da função
@@ -182,9 +184,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4170; 
+ * @POSICAO-CURSOR = 4203; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {numeroCandidato, 10, 3, 15}-{nulo, 11, 3, 4}-{branco, 12, 3, 6}-{confirmaNumeroCandidato, 13, 3, 23}-{candidato1, 15, 3, 10}-{candidato2, 16, 3, 10}-{candidato3, 17, 3, 10}-{percentualCandidato1, 18, 3, 20};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
