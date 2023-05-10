@@ -1,6 +1,8 @@
 programa 
 {
 	inclua biblioteca Matematica --> Mat
+	inclua biblioteca Sons
+	inclua biblioteca Util
 	 
 	funcao inicio()
 	{
@@ -24,9 +26,7 @@ programa
 		cadeia 
 			candidato1nome, 
 			candidato2nome, 
-			candidato3nome, 
-			confirma, 
-			naoConfirma
+			candidato3nome 
 
 		logico 
 			empate = falso,
@@ -51,22 +51,16 @@ programa
 		escreva("9| Voto em branco \n")
 		escreva("PIN| Encerrar votação \n")
 		
+	
 
 		faca {
-			faca {
-				escreva("\n \n Digite o número do candidato: ")
-				leia(confirmaNumeroCandidato)
 	
-				escreva("\n Você confirma o seu voto? \n \n Digite 'S' para Sim \n Digite 'N' para Não \n")
-				leia(confirma)
-			
-			} enquanto (confirma == "N" ou confirma == "n")
-				se(confirma == "S" ou confirma == "s"){
-					numeroCandidato = confirmaNumeroCandidato
-			}
+				escreva("\n\n Digite o número do candidato: ")
+				leia(confirmaNumeroCandidato)
 
 			escolha (numeroCandidato) {
 			caso 1: 
+				confirmacao()
 				candidato1++ //candidato1 = candidato1 + 1//
 				numeroVotante++
 				escreva(candidato1nome, " recebeu um voto \n")
@@ -89,6 +83,11 @@ programa
 				numeroVotante++
 				escreva("O voto foi nulo \n")
 				pare
+			
+			caso 9:
+				branco++
+				numeroVotante++
+				escreva("O voto foi em branco \n")
 
 			caso 123456:
 				limpa()
@@ -98,16 +97,20 @@ programa
 				
 				se(confirmaEncerramento == 's' ou confirmaEncerramento == 'S'){
 					encerraVotacao = verdadeiro
+					pare
 				}
-				pare
-			
-			caso contrario:
-				branco++
-				numeroVotante++
-				escreva("O voto foi em branco \n")
+
+			caso contrario: 
+				escreva("Opções de voto: \n")
+				escreva("1| ", candidato1nome, "\n")
+				escreva("2| ", candidato2nome, "\n")
+				escreva("3| ", candidato3nome, "\n")
+				escreva("6| Voto Nulo \n")
+				escreva("9| Voto em branco \n")
+				escreva("PIN| Encerrar votação \n")
 	
 			} 
-		} enquanto(numeroCandidato != 0)
+		} enquanto(nao encerraVotacao) //encerraVotacao == falso
 			
 				se(candidato1>candidato2 e candidato1>candidato3){
 					candidato1 = candidato1 + branco
@@ -122,13 +125,13 @@ programa
 				limpa()
 	
 				percentualCandidato1 = (candidato1 / numeroVotante) * 100
-				percentualCandidato1 = Mat.arredondar(percentualCandidato1, 3)
+				percentualCandidato1 = Mat.arredondar(percentualCandidato1, 2)
 				
 				percentualCandidato2 = (candidato2 / numeroVotante) * 100
-				percentualCandidato2 = Mat.arredondar(percentualCandidato2, 3)
+				percentualCandidato2 = Mat.arredondar(percentualCandidato2, 2)
 				
 				percentualCandidato3 = (candidato3 / numeroVotante) * 100
-				percentualCandidato3 = Mat.arredondar(percentualCandidato3, 3)
+				percentualCandidato3 = Mat.arredondar(percentualCandidato3, 2)
 				
 				escreva("Valor do percentual de votos para ", candidato1nome, " é: ", percentualCandidato1, "%. \n")
 				escreva("Valor do percentual de votos para ", candidato2nome, " é: ", percentualCandidato2, "%. \n")
@@ -148,7 +151,30 @@ programa
 					escreva("Não foi possível determinar um ganhador nesta urna")
 				}
 		
-		}//função
+		}//função inicio ()
+
+		funcao confirmacao() {
+			cadeia confirma
+			inteiro 
+				numeroCandidato = 0, 
+				confirmaNumeroCandidato = 0
+			
+			escreva("\n Você confirma o seu voto? \n\n Digite 'S' para Sim \n Digite 'N' para Não \n")
+				leia(confirma)
+				se(confirma == "S" ou confirma == "s"){
+				numeroCandidato = confirmaNumeroCandidato
+				somUrna(2)
+				}
+		} //funcao confirmacao()
+
+		funcao somUrna(inteiro tempoDeEspera) { //funcao VAZIO somUrna pois não está retornando nada, é preciso declarar a var do parâmetro dontro dos () da função
+	
+			inteiro somConfirmacao = Sons.carregar_som("audio/confirma-urna.mp3")
+
+			Sons.reproduzir_som(somConfirmacao, falso)
+			Util.aguarde(tempoDeEspera * 1000) // é necessário colocar x1000 pra poder colocar os parâmetros em segundos e ficar mais fácil, pois a função aguarde é em milisegundos
+			
+		} //função somUrna()
 		
 	/*programa*/ }
 /* $$$ Portugol Studio $$$ 
@@ -156,7 +182,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2196; 
+ * @POSICAO-CURSOR = 4170; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
