@@ -5,7 +5,7 @@ programa
 	{
 		//notas dos 5 alunos {5, 6, 8, 3, 10}
 		real notaAluno[5] = {5.0, 6.0, 8.0, 3.0, 10.0} //um array com 5 posições, sendo a 1° posição é sempre 0
-		//                   p0    p1   p2   p3   p4  
+		//índices            i0    i1   i2   i3   i4  
 		inteiro quantidadeDeNotas = 5 
 
 		escreva ("Imprima a quantidade de notas: ")
@@ -36,7 +36,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1024; 
+ * @POSICAO-CURSOR = 602; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
