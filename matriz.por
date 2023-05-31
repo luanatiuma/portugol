@@ -71,7 +71,8 @@ programa
 				vogal++
 			}
 			senao se(shak[i][j] == ' '){
-				espaco++
+				espaco++ //Como os espaços não estão precisando ser contabilizados, não necessariamente precisa declarar essa variável
+				//Só precisa colocar a condição no senão se pra não entrar o espaço no senao
 			}
 			senao{
 				consoante++	
@@ -93,7 +94,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2198; 
+ * @POSICAO-CURSOR = 2384; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
